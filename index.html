@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 and JavaScript Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS3 and JavaScript Animation </h1>
+        </header>
+        
+        <section id="part1">
+            <h2>Part 1: CSS3 Transitions and Animations</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Transition Effects</h3>
+                    <p>Hover over the box to see transition effects:</p>
+                    <div class="transition-box"></div>
+                    <p>Combines color change, transform, and border-radius transitions.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Button Ripple Effect</h3>
+                    <p>Click the button to see a ripple animation:</p>
+                    <button class="animated-button">Click Me</button>
+                    <p>Uses ::after pseudo-element with keyframe animation.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Continuous Animation</h3>
+                    <p>This box has a continuous pulsing animation:</p>
+                    <div class="continuous-animation"></div>
+                    <p>Uses infinite keyframe animation with transform and box-shadow.</p>
+                </div>
+            </div>
+        </section>
+       
+        <section id="part2">
+            <h2>Part 2: JavaScript Functions  Scope, Parameters and Return Values</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Function with Parameters</h3>
+                    <div class="code-block">
+                        function calculateArea(width, height) {<br>
+                        &nbsp;&nbsp;return width * height;<br>
+                        }
+                    </div>
+                    <button onclick="demoCalculateArea()">Run calculateArea(10,15)</button>
+                    <div class="output" id="areaOutput"></div>
+                </div>
+                
+                <div class="card">
+                    <h3>Scope Demonstration</h3>
+                    <div class="code-block">
+                        let globalVar = "I'm global";<br><br>
+                        function scopeDemo() {<br>
+                        &nbsp;&nbsp;let localVar = "I'm local";<br>
+                        &nbsp;&nbsp;return { global: globalVar, local: localVar };<br>
+                        }
+                    </div>
+                    <button onclick="demoScope()">Run scopeDemo()</button>
+                    <div class="output" id="scopeOutput"></div>
+                </div>
+                
+                <div class="card">
+                    <h3>Reusable Animation Function</h3>
+                    <div class="code-block">
+                        function animateElement(element, animationClass) {<br>
+                        &nbsp;&nbsp;element.classList.remove(animationClass);<br>
+                        &nbsp;&nbsp;void element.offsetWidth; // Trigger reflow<br>
+                        &nbsp;&nbsp;element.classList.add(animationClass);<br>
+                        &nbsp;&nbsp;return "Animation started";<br>
+                        }
+                    </div>
+                    <button onclick="demoAnimationFunction()">Run animateElement()</button>
+                    <div class="output" id="animationOutput"></div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="part3">
+            <h2>Part 3: Combining CSS Animations with JavaScript</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>JavaScript-Triggered Animation</h3>
+                    <p>Click the button to trigger the animation:</p>
+                    <div class="animation-box" id="jsAnimationBox"></div>
+                    <button onclick="triggerAnimation()">Animate Box</button>
+                    
+                </div>
+                
+                <div class="card">
+                    <h3>Card Flip on Hover</h3>
+                    <p>Hover over the card to flip it.</p>
+                    <div class="card-flip">
+                        <div class="card-inner">
+                            <div class="card-front">Front</div>
+                            <div class="card-back">Back</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Modal with Animation</h3>
+                    <button onclick="openModal()">Open Modal</button>
+                   
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3>Animated Modal</h3>
+            <p>This modal appears with a fade and slide-down animation, controlled by JavaScript adding CSS classes.</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
